@@ -11,13 +11,21 @@ app.use(express.json());
 
 const { 
     getCompliment,
-    getFortune
+    getFortune,
+    getAllFortunes,
+    addFortune,
+    deleteFortune,
+    changeFortune
 } = require('./controller')
 
 
 
 app.get("/api/compliment", getCompliment);
 app.get("/api/fortune", getFortune);
+app.get("/api/fortunes", getAllFortunes);
+app.post("/api/fortune/:fortune", addFortune);
+app.delete("/api/fortune/", deleteFortune);
+app.put("/api/fortune/:id", changeFortune);
 
 
 

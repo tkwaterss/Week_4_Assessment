@@ -4,15 +4,36 @@
     <title>Back End Assessment</title>
   </head>
   <body class="container">
+    <header>
+      <h2>Get Your Fotune</h2>
+    </header>
+
+      <form class="inputs" id="newFortuneForm">
+        <label class="textInput" for="fortune">Add your own fortune: <input type="text" id="fortune" name="fortune"></label>
+        <input type="submit">
+      </form>
+      
+      <form class="inputs" id="editFortuneForm">
+        <label class="textInput" for="id">Fortune ID: <input type="text" id="id" name="id"></label>
+        <label class="textInput" for="edit">New Fortune Content: <input type="text" id="edit" name="edit"></label>
+        <input type="submit">
+      </form>
+
+    <main></main>
+
+
+
+
     <button id="complimentButton">Get a compliment</button>
     <button id="fortuneButton">Get a Fortune</button>
+    <button id="deleteButton">Delete</button>
 
 
 
 
 
 
-    
+
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="main.js"></script>
     
