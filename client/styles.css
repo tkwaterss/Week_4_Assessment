@@ -20,6 +20,7 @@ main {
 form {
     width: 45vw;
     margin: 20px;
+    text-align: center;
 }
 ol {
     margin: 20px 40px;
