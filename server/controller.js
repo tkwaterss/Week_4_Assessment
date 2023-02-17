@@ -6,10 +6,7 @@ let fortunes = [
     "Fortune Not Found: Abort, Retry, Ignore?"
 ];
 
-
-
 module.exports = {
-
     getCompliment: (req, res) => {
         const compliments = ["Gee, you're a smart cookie!", "Cool shirt!", "Your Javascript skills are stellar."];
       
@@ -45,8 +42,7 @@ module.exports = {
         let array = id.split(',')
         console.log(array)
 
-        fortunes.splice(+array[0],1,array[1])
+        fortunes.splice((+array[0] - 1),1,array[1])
         res.status(200).send(fortunes);
     }
-
 }

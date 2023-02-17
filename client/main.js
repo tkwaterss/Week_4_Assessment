@@ -1,10 +1,9 @@
 const complimentBtn = document.getElementById("complimentButton")
 const fortuneBtn = document.getElementById("fortuneButton");
-const main = document.querySelector('main');
+const ol = document.querySelector('ol');
 const newFortune = document.querySelector('#newFortuneForm');
 const input = document.querySelector('#fortune');
 const deleteBtn = document.querySelector('#deleteButton');
-
 const editFortune = document.querySelector('#editFortuneForm');
 const edit = document.querySelector('#edit');
 const id = document.querySelector('#id');
@@ -54,18 +53,20 @@ const changeFortune = (event) => {
             displayFortunes(response.data)
         })
         .catch(err => console.log(err))
+    edit.value = ""
+    id.value = ""
 }
 
 
 const createFortune = string => {
-    const newFortune = document.createElement('h4')
+    const newFortune = document.createElement('li')
     newFortune.textContent = string;
 
-    main.appendChild(newFortune)
+    ol.appendChild(newFortune)
 }
 
 const displayFortunes = (array) => {
-    main.innerHTML = "";
+    ol.innerHTML = "";
     for (let i = 0; i < array.length; i++) {
         createFortune(array[i]);
     }
