@@ -6,14 +6,14 @@ const randomFortune = document.querySelector("#fortune");
 
 let baseURL = "http://localhost:4000/api/fortunes";
 
-// const yourFortuneCallback = (response) => displayYourFortune(response);
+//.then always takes a response object. We can destructure this inline in a callback function parameter.
+//look at discord with Lukas for more info.
+const yourFortuneCallback = ({ data : array }) => displayYourFortune(array);
 const errCallback = err => console.log(err);
 
 
 const getYourFortune = () => axios.get(baseURL + `/yourFortune`)
-.then(response => {
-    displayYourFortune(response.data)
-}).catch(errCallback);
+.then(yourFortuneCallback).catch(errCallback);
 
 const fortuneEventHandler = event => {
     event.preventDefault();
