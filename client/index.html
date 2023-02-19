@@ -4,40 +4,63 @@
     <title>Back End Assessment</title>
     <link rel="stylesheet" href="styles.css">
   </head>
-  <body class="container">
+
+  <body>
     <header>
-      <h2>Get Your Fortune</h2>
+      <h1>Fortune Teller</h1>
+      <form id="nameCard">
+        <label for="name">Your Name: <input type="text" id="name" name="name"></label>
+        <input type="submit">
+      </form>
     </header>
 
-    <main>
-      <form class="inputs" id="newFortuneForm">
-        <label class="textInput" for="fortune">Add your own fortune: <input type="text" id="fortune" name="fortune"></label><br>
-        <input type="submit">
-      </form>
-      
-      <form class="inputs" id="editFortuneForm">
-        <label class="textInput" for="id">Fortune ID: <input type="text" id="id" name="id"></label><br>
-        <label class="textInput" for="edit">New Fortune Content: <input type="text" id="edit" name="edit"></label><br>
-        <input type="submit">
-      </form>
-    </main>
+    <body>
+      <div>
+        <h1 id="userName">Put User Name Here</h1>
+      </div>
+      <section id="display">
+        <div class="compDiv">
+          <h3 id="compliment">Put Compliment Here</h3>
+        </div>
+        <div class="fortuneDiv">
+          <h3 id="fortune">Put Fortune here</h3>
+        </div>
+      </section>
+      <div id="editSection">
+        <button id="showEdit">Show Edit Section</button>
+      </div>
+    </body>
 
 
+    <footer>
+      <section id="add-edit">
+        <form id="addForm">
+          <p>Add your own compliment or fortune!</p>
+          <input type="radio" id="compCheckbox" name="checkbox" value="compliment">
+          <label for="compCheckbox">Compliment</label>
+          <input type="radio" id="fortuneCheckbox" name="checkbox" value="fortune">
+          <label for="fortuneCheckbox">Fortune</label><br>
+          <label for="newItem">Enter your new compliment or fortune: <input type="text" id="newItem" name="newItem"></label>
+          <input type="submit">
+        </form>
+      </section>
 
-    <ol></ol>
-
-
-
+      <section id="list">
+        <div id="complimentDiv">
+          <ol id="compliments">
+            <li>Mock Compliment</li>
+          </ol>
+        </div>
+        <div id="fortuneDiv">
+          <ol id="fortunes">
+            <li>Mock Fortune</li>
+          </ol>
+        </div>
+      </section>
+    </footer>
 
     <button id="complimentButton">Get a compliment</button>
     <button id="fortuneButton">Get a Fortune</button>
-    <button id="deleteButton">Delete First Fortune</button>
-
-
-
-
-
-
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="main.js"></script>
