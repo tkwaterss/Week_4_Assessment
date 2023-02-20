@@ -9,15 +9,17 @@ app.use(express.json());
 
 const { 
     getYourFortune,
-    getAllCompliments,
     getAllFortunes,
-    addYourOwn,
-    editItem,
+    addFortune,
+    deleteListItem,
 
 
 } = require('./controller')
 
 app.get("/api/fortunes/yourFortune", getYourFortune);
+app.get("/api/fortunes/allFortunes", getAllFortunes);
+app.post("/api/fortunes/:type", addFortune);
+app.delete("/api/fortunes/:index", deleteListItem);
 
 
 // app.get("/api/compliment", getCompliment);
