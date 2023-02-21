@@ -10,20 +10,20 @@
       <h1>Fortune Teller</h1>
       <form id="nameCard">
         <label for="name">Your Name: <input type="text" id="name" name="name"></label>
-        <input type="submit">
+        <input type="submit" id="nameSubmit">
       </form>
     </header>
 
     <main>
       <div>
-        <h1 id="userName">Put User Name Here</h1>
+        <h1 id="userName"></h1>
       </div>
       <section id="display">
-        <div class="compDiv">
-          <h3 id="compliment">Put Compliment Here</h3>
+        <div class="yourDiv">
+          <h3 id="compliment"></h3>
         </div>
-        <div class="fortuneDiv">
-          <h3 id="fortune">Put Fortune here</h3>
+        <div class="yourDiv">
+          <h3 id="fortune"></h3>
         </div>
       </section>
       <div id="editSection">
@@ -36,12 +36,12 @@
       <section id="add-edit">
         <form id="addForm">
           <p>Add your own compliment or fortune!</p>
-          <input type="radio" id="compCheckbox" name="checkbox" value="compliment">
-          <label for="compCheckbox">Compliment</label>
-          <input type="radio" id="fortuneCheckbox" name="checkbox" value="fortune">
-          <label for="fortuneCheckbox">Fortune</label><br>
-          <label for="newItem">Enter your new compliment or fortune: <input type="text" id="newItem" name="newItem"></label>
-          <input type="submit">
+          <label class="checkbox" for="compCheckbox"><input type="radio" id="compCheckbox" name="checkbox" value="compliment">Compliment</label>
+          <label class="checkbox" for="fortuneCheckbox"><input type="radio" id="fortuneCheckbox" name="checkbox" value="fortune">Fortune</label><br>
+          <div id="newContent">
+            <label for="newItem">Enter your new compliment or fortune: <input class="editInput" type="text" id="newItem" name="newItem"></label>
+            <input id="newSubmit" type="submit">
+          </div>
         </form>
       </section>
 
@@ -56,9 +56,6 @@
         </div>
       </section>
     </footer>
-
-    <button id="complimentButton">Get a compliment</button>
-    <button id="fortuneButton">Get a Fortune</button>
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="main.js"></script>

@@ -1,21 +1,122 @@
+* {
+    margin: 0px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+html {
+    background-color: #ffe7c3;
+}
+body {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70vw;
+    background-color: #ffcd83;
+    margin: 0 auto;
+}
+button {
+    background-color: #ce763c;
+    border: 1px black solid;
+    padding: 2.5px 7px;
+}
 header {
-    border: solid;
+    width: 100%;
+    text-align: center;
+    padding: 1rem 0;
+    background-color: #ce763c;
+}
+#nameCard {
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: bold;
+}
+#name {
+    background-color: #ffe7c3;
     padding: 5px;
 }
+#nameSubmit {
+    background-color: #ffcd83;
+    padding: 5px;
+    font-size: 18px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 1.5px solid black
+}
+
 main {
-    border: solid;
-    padding: 5px;
-    margin: 5px;
-    display: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ebb166;
+    height: 18rem;
+    width: 100%;
+    justify-content: space-evenly;
 }
+#display {
+    display:flex;
+    justify-content: space-evenly;
+    width: 100%;
+    align-items: center;
+}
+#userName {
+    font-size: 40px;
+}
+.yourDiv {
+    width: 30%;
+    font-size: 25px;
+}
+#showEdit {
+    border: 1.5px black solid;
+    border-radius: 5px;
+    background-color: #ffcd83;
+    padding: 3px;
+}
+
+
 footer {
-    border: solid;
-    padding: 20px;
-    margin: 10px;
-    /* display: none; */
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
 }
-div {
-    border: dashed;
-    padding:5px;
-    margin: 5px;
+#add-edit {
+    text-align: center;
+    padding: 15px;
+    width: 80%;
+    border-bottom: solid 4px rgb(233, 155, 52);
+    margin-bottom: 15px;
+}
+.checkbox {
+    padding: 20px;
+}
+p {
+    font-size: 20px;
+    padding-bottom: 8px;
+}
+.editInput {
+    padding: 2.5px;
+    background-color: #ffe7c3;
+    border: 1px solid black;
+}
+#newContent {
+    padding-top: 8px;
+}
+li {
+    padding: 3px;
+}
+ol {
+    margin: 10px;
+}
+h4 {
+    font-size: 18px;
+}
+
+
+
+
+
+.editForm {
+    display: none;
 }

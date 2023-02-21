@@ -12,21 +12,13 @@ const {
     getAllFortunes,
     addFortune,
     deleteListItem,
-
-
+    editListItem
 } = require('./controller')
 
 app.get("/api/fortunes/yourFortune", getYourFortune);
 app.get("/api/fortunes/allFortunes", getAllFortunes);
 app.post("/api/fortunes/:type", addFortune);
-app.delete("/api/fortunes/:index", deleteListItem);
-
-
-// app.get("/api/compliment", getCompliment);
-// app.get("/api/fortune", getFortune);
-// app.get("/api/fortunes", getAllFortunes);
-// app.post("/api/fortune/:fortune", addFortune);
-// app.delete("/api/fortune/", deleteFortune);
-// app.put("/api/fortune/:id", changeFortune);
+app.delete("/api/fortunes", deleteListItem);
+app.put("/api/fortunes", editListItem);
 
 app.listen(4000, () => console.log("Server running on 4000"));

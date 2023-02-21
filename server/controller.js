@@ -38,59 +38,29 @@ module.exports = {
     },
     deleteListItem: (req, res) => {
         let returnData = {};
-        console.log(req.params);
-        let {index} = req.params;
-        console.log(typeof index);
-
-
-
-
-
-        // returnData.fortunes = fortunesDB;
-        // returnData.compliments = complimentsDB;
+        let {index, type} = req.query;
+        if (type === 'compliment') {
+            complimentsDB.splice(+index,1);
+        } else if (type === 'fortune') {
+            fortunesDB.splice(+index,1);
+        }
+        returnData.fortunes = fortunesDB;
+        returnData.compliments = complimentsDB;
         // console.log(returnData);
-        // res.status(200).send(returnData);
+        res.status(200).send(returnData);
+    },
+    editListItem: (req, res) => {
+        let returnData = {};
+        let {index, type} = req.query;
+        let {newContent} = req.body;
+        if (type === 'compliment') {
+            complimentsDB.splice(index,1,newContent);
+        } else if (type === 'fortune') {
+            fortunesDB.splice(index,1,newContent);
+        }
+        returnData.fortunes = fortunesDB;
+        returnData.compliments = complimentsDB;
+        // console.log(returnData);
+        res.status(200).send(returnData);
     }
-    
-    
-    
-    
-    // getCompliment: (req, res) => {
-    //     const compliments = ["Gee, you're a smart cookie!", "Cool shirt!", "Your Javascript skills are stellar."];
-      
-    //     // choose random compliment
-    //     let randomIndex = Math.floor(Math.random() * compliments.length);
-    //     let randomCompliment = compliments[randomIndex];
-      
-    //     res.status(200).send(randomCompliment);
-    // },
-    // getFortune: (req, res) => {
-    //     let randomNum = Math.floor(Math.random()*fortunes.length);
-    //     let randomFortune = fortunes[randomNum];
-    //     res.status(200).send(randomFortune);
-    // },
-    // getAllFortunes: (req,res) => {
-    //     // console.log(fortunes)
-    //     res.status(200).send(fortunes);
-    // },
-    // addFortune: (req, res) => {
-    //     console.log(req.params);
-    //     fortunes.push(req.params.fortune)
-    //     res.status(200).send(fortunes);
-    // },
-    // deleteFortune: (req, res) => {
-    //     fortunes.shift()
-    //     console.log(fortunes)
-    //     res.status(200).send(fortunes);
-    // },
-    // changeFortune: (req, res) => {
-    //     console.log(req.params);
-    //     let {id} = req.params
-    //     console.log(typeof id);
-    //     let array = id.split(',')
-    //     console.log(array)
-
-    //     fortunes.splice((+array[0] - 1),1,array[1])
-    //     res.status(200).send(fortunes);
-    // }
 }
